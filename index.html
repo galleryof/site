@@ -3,39 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>галерея имени</title>
+<title>в разработке</title>
 <style>
 @import url('https://googleapis.com');
-html,body{margin:0;padding:0;background:#050505;color:#fff;font-family:'Montserrat',sans-serif;min-height:100vh;overflow-y:auto;scroll-behavior:smooth;}
-.screen-wrapper{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;box-sizing:border-box;padding:60px 20px;background:radial-gradient(circle at center,rgba(15,15,20,0.9) 0%,rgba(3,3,5,1) 100%);}
-.circle-frame{width:320px;height:320px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,0.9),inset 0 0 30px rgba(255,255,255,0.05);display:flex;justify-content:center;align-items:center;margin-bottom:50px;animation:rotateAvatar 25s linear infinite;}
-.circle-frame img{width:100%;height:100%;object-fit:cover;}
-.quote-container{text-align:center;max-width:1100px;margin-bottom:60px;padding:0 20px;}
-.title-text{font-family:'Cinzel',serif;font-size:72px;font-weight:400;letter-spacing:4px;line-height:1.2;color:#ffffff;text-shadow:0 15px 40px rgba(0,0,0,0.6);text-transform:uppercase;margin-bottom:15px;}
-.subtitle-text{font-family:'Montserrat',sans-serif;font-weight:100;font-size:32px;letter-spacing:18px;text-transform:uppercase;color:rgba(255,255,255,0.7);padding-left:18px;text-shadow:0 10px 30px rgba(0,0,0,0.5);margin-bottom:30px;}
-.disclaimer-text{font-family:'Montserrat',sans-serif;font-weight:200;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.25);line-height:2;max-width:600px;margin:0 auto;}
-.tg-btn{font-family:'Montserrat',sans-serif;font-weight:300;font-size:14px;letter-spacing:6px;text-transform:uppercase;color:#ffffff;text-decoration:none;border:1px solid rgba(255,255,255,0.2);padding:22px 70px;border-radius:50px;background:rgba(255,255,255,0.02);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);transition:all 0.5s cubic-bezier(0.2,1,0.2,1);box-shadow:0 20px 45px rgba(0,0,0,0.7),inset 0 1px 0 rgba(255,255,255,0.05);margin-top:20px;}
-.tg-btn:hover{background:#ffffff;color:#000000;border-color:#ffffff;box-shadow:0 25px 50px rgba(255,255,255,0.1),0 0 0 5px rgba(255,255,255,0.03);transform:translateY(-3px);}
-@keyframes rotateAvatar{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+html,body{margin:0;padding:0;background:#09090b;color:#fff;font-family:'Montserrat',sans-serif;min-height:100vh;overflow:hidden;}
+.main-container{width:100%;height:100vh;display:flex;justify-content:space-between;align-items:center;box-sizing:border-box;padding:0 10%;background:#09090b;}
+.left-side{flex:1;max-width:55%;}
+.title-text{font-family:'Cinzel',serif;font-size:72px;font-weight:400;letter-spacing:4px;line-height:1.2;color:#ffffff;text-transform:uppercase;text-shadow:0 20px 50px rgba(0,0,0,0.5);}
+.right-side{flex:1;display:flex;justify-content:flex-end;align-items:center;}
+.meme-frame{width:450px;height:450px;border-radius:24px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.8),0 0 0 1px rgba(255,255,255,0.05);background:#121214;}
+.meme-frame img{width:100%;height:100%;object-fit:cover;}
 @media(max-width:900px){
-.circle-frame{width:220px;height:220px;margin-bottom:35px;}
+.main-container{flex-direction:column;justify-content:center;padding:40px 20px;gap:50px;}
+.left-side{max-width:100%;text-align:center;}
 .title-text{font-size:42px;letter-spacing:2px;}
-.subtitle-text{font-size:20px;letter-spacing:10px;padding-left:10px;}
-.tg-btn{padding:18px 50px;font-size:12px;}
+.right-side{justify-content:center;width:100%;}
+.meme-frame{width:280px;height:280px;}
 }
 </style>
 </head>
 <body>
-<div class="screen-wrapper">
-<div class="circle-frame">
-<img src="ava.jpg" alt="">
+<div class="main-container">
+<div class="left-side">
+<div class="title-text">Сайт в разработке.</div>
 </div>
-<div class="quote-container">
-<div class="title-text">галерея имени –</div>
-<div class="subtitle-text">#1 мемный канал</div>
-<div class="disclaimer-text">* по версии мии (мемного института имени)<br>за 2025-2026 г.</div>
+<div class="right-side">
+<div class="meme-frame">
+<img id="random-meme" src="" alt="">
 </div>
-<a href="https://t.me/galanrel" target="_blank" class="tg-btn">войти в канал</a>
 </div>
+</div>
+<script>
+const memes=['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg'];
+const randomMeme=memes[Math.floor(Math.random()*memes.length)];
+document.getElementById('random-meme').src=randomMeme;
+</script>
 </body>
 </html>
